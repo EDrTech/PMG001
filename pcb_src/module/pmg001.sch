@@ -298,8 +298,6 @@
 <text x="0.33" y="-2.2" size="0.7" layer="51" ratio="15" rot="R90">NRS5040</text>
 </package>
 <package name="SOP50P490X110-10N">
-<circle x="-3.5" y="1.25" radius="0.1" width="0.2" layer="21"/>
-<circle x="-3.5" y="1.25" radius="0.1" width="0.2" layer="51"/>
 <wire x1="-1.5" y1="1.5" x2="1.5" y2="1.5" width="0.127" layer="51"/>
 <wire x1="-1.5" y1="-1.5" x2="1.5" y2="-1.5" width="0.127" layer="51"/>
 <wire x1="-1.5" y1="1.5" x2="1.5" y2="1.5" width="0.127" layer="21"/>
@@ -310,8 +308,6 @@
 <wire x1="-3.135" y1="-1.75" x2="3.135" y2="-1.75" width="0.05" layer="39"/>
 <wire x1="-3.135" y1="1.75" x2="-3.135" y2="-1.75" width="0.05" layer="39"/>
 <wire x1="3.135" y1="1.75" x2="3.135" y2="-1.75" width="0.05" layer="39"/>
-<text x="-3" y="-2" size="1.016" layer="27" align="top-left">&gt;VALUE</text>
-<text x="-3" y="2" size="1.016" layer="25">&gt;NAME</text>
 <smd name="1" x="-2.15" y="1" dx="1.47" dy="0.28" layer="1" roundness="25"/>
 <smd name="2" x="-2.15" y="0.5" dx="1.47" dy="0.28" layer="1" roundness="25"/>
 <smd name="3" x="-2.15" y="0" dx="1.47" dy="0.28" layer="1" roundness="25"/>
@@ -1218,6 +1214,21 @@
 <vertex x="9.2" y="0"/>
 </polygon>
 </package>
+<package name="PMZ290UNE2YL">
+<description>&lt;b&gt;PMZ290UNE2YL-3&lt;/b&gt;&lt;br&gt;
+</description>
+<smd name="1" x="-0.35" y="0.226" dx="0.4" dy="0.25" layer="1"/>
+<smd name="2" x="-0.35" y="-0.225" dx="0.4" dy="0.25" layer="1"/>
+<smd name="3" x="0.35" y="0.001" dx="0.7" dy="0.4" layer="1" rot="R90"/>
+<wire x1="-0.492" y1="0.292" x2="0.492" y2="0.292" width="0.1" layer="51"/>
+<wire x1="0.492" y1="0.292" x2="0.492" y2="-0.292" width="0.1" layer="51"/>
+<wire x1="0.492" y1="-0.292" x2="-0.492" y2="-0.292" width="0.1" layer="51"/>
+<wire x1="-0.492" y1="-0.292" x2="-0.492" y2="0.292" width="0.1" layer="51"/>
+<wire x1="-1.1" y1="0.226" x2="-1.1" y2="0.226" width="0.1" layer="21"/>
+<wire x1="-1.1" y1="0.226" x2="-1" y2="0.226" width="0.1" layer="21" curve="180"/>
+<wire x1="-1" y1="0.226" x2="-1" y2="0.226" width="0.1" layer="21"/>
+<wire x1="-1" y1="0.226" x2="-1.1" y2="0.226" width="0.1" layer="21" curve="180"/>
+</package>
 </packages>
 <symbols>
 <symbol name="ATTINY1616-MNR">
@@ -1376,6 +1387,29 @@
 <pin name="P$14" x="33.02" y="5.08" length="middle" rot="R270"/>
 <pin name="P$15" x="35.56" y="5.08" length="middle" rot="R270"/>
 <pin name="P$16" x="38.1" y="5.08" length="middle" rot="R270"/>
+</symbol>
+<symbol name="PMZ290UNE2YL">
+<wire x1="7.62" y1="2.54" x2="7.62" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="7.62" y1="5.08" x2="7.62" y2="7.62" width="0.254" layer="94"/>
+<wire x1="2.54" y1="0" x2="5.08" y2="0" width="0.254" layer="94"/>
+<wire x1="5.08" y1="5.08" x2="5.08" y2="0" width="0.254" layer="94"/>
+<wire x1="7.62" y1="2.54" x2="5.842" y2="2.54" width="0.254" layer="94"/>
+<wire x1="7.62" y1="5.08" x2="5.842" y2="5.08" width="0.254" layer="94"/>
+<wire x1="5.842" y1="0" x2="7.62" y2="0" width="0.254" layer="94"/>
+<wire x1="5.842" y1="5.588" x2="5.842" y2="4.572" width="0.254" layer="94"/>
+<wire x1="5.842" y1="-0.508" x2="5.842" y2="0.508" width="0.254" layer="94"/>
+<wire x1="5.842" y1="2.032" x2="5.842" y2="3.048" width="0.254" layer="94"/>
+<circle x="6.35" y="2.54" radius="3.81" width="0.254" layer="94"/>
+<text x="11.43" y="3.81" size="1.778" layer="95" align="center-left">&gt;NAME</text>
+<text x="11.43" y="1.27" size="1.778" layer="96" align="center-left">&gt;VALUE</text>
+<pin name="G" x="0" y="0" visible="pad" length="short"/>
+<pin name="D" x="7.62" y="10.16" visible="pad" length="short" rot="R270"/>
+<pin name="S" x="7.62" y="-5.08" visible="pad" length="short" rot="R90"/>
+<polygon width="0.254" layer="94">
+<vertex x="5.842" y="2.54"/>
+<vertex x="6.858" y="3.048"/>
+<vertex x="6.858" y="2.032"/>
+</polygon>
 </symbol>
 </symbols>
 <devicesets>
@@ -1662,6 +1696,34 @@ Source: &lt;a href="http://www.ti.com/lit/gpn/tmp102"&gt; Datasheet &lt;/a&gt;</
 </connects>
 <technologies>
 <technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="PMZ290UNE2YL" prefix="Q">
+<description>&lt;b&gt;NEXPERIA - PMZ290UNE2YL - MOSFET, N-CH, 20V, 1.2A, SOT883-3&lt;/b&gt;&lt;p&gt;
+Source: &lt;a href="https://assets.nexperia.com/documents/data-sheet/PMZ290UNE2.pdf"&gt; Datasheet &lt;/a&gt;</description>
+<gates>
+<gate name="G$1" symbol="PMZ290UNE2YL" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="PMZ290UNE2YL">
+<connects>
+<connect gate="G$1" pin="D" pad="3"/>
+<connect gate="G$1" pin="G" pad="1"/>
+<connect gate="G$1" pin="S" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="ARROW_PART_NUMBER" value="PMZ290UNE2YL" constant="no"/>
+<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/pmz290une2yl/nexperia?region=nac" constant="no"/>
+<attribute name="DESCRIPTION" value="NEXPERIA - PMZ290UNE2YL - MOSFET, N-CH, 20V, 1.2A, SOT883-3" constant="no"/>
+<attribute name="HEIGHT" value="0.5mm" constant="no"/>
+<attribute name="MANUFACTURER_NAME" value="Nexperia" constant="no"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="PMZ290UNE2YL" constant="no"/>
+<attribute name="MOUSER_PART_NUMBER" value="771-PMZ290UNE2YL" constant="no"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Nexperia/PMZ290UNE2YL?qs=d7b8vw%252BBfo36oSq9BwEp0w%3D%3D" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
@@ -13653,6 +13715,9 @@ Source: &lt;a href="http://www.injoinic.com/wwwroot/uploads/files/20230913/62355
 <part name="LED_BUILTIN" library="adafruit" deviceset="LED" device="CHIPLED_0603"/>
 <part name="U$1" library="edrtech_lib" deviceset="1.27_MALE_16P_HEADER" device=""/>
 <part name="U$2" library="edrtech_lib" deviceset="1.27_MALE_16P_HEADER" device=""/>
+<part name="Q1" library="edrtech_lib" deviceset="PMZ290UNE2YL" device=""/>
+<part name="R9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="150R"/>
+<part name="R13" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="20K"/>
 </parts>
 <sheets>
 <sheet>
@@ -13679,7 +13744,7 @@ Source: &lt;a href="http://www.injoinic.com/wwwroot/uploads/files/20230913/62355
 <wire x1="13.97" y1="8.89" x2="92.71" y2="8.89" width="0.1524" layer="97"/>
 <wire x1="92.71" y1="5.08" x2="13.97" y2="5.08" width="0.1524" layer="97"/>
 <text x="91.44" y="6.35" size="1.778" layer="97" align="bottom-right">EDRTECH D.O.O.</text>
-<text x="91.44" y="2.54" size="1.778" layer="97" align="bottom-right">09.07.2024.</text>
+<text x="91.44" y="2.54" size="1.778" layer="97" align="bottom-right">29.07.2024.</text>
 <wire x1="1.27" y1="12.7" x2="1.27" y2="182.88" width="0.1524" layer="97"/>
 <wire x1="1.27" y1="182.88" x2="299.72" y2="182.88" width="0.1524" layer="97"/>
 <wire x1="299.72" y1="182.88" x2="299.72" y2="1.27" width="0.1524" layer="97"/>
@@ -13852,6 +13917,18 @@ Source: &lt;a href="http://www.injoinic.com/wwwroot/uploads/files/20230913/62355
 </instance>
 <instance part="U$1" gate="G$1" x="27.94" y="53.34" smashed="yes"/>
 <instance part="U$2" gate="G$1" x="66.04" y="36.83" smashed="yes" rot="R180"/>
+<instance part="Q1" gate="G$1" x="86.36" y="74.93" smashed="yes">
+<attribute name="NAME" x="86.36" y="54.61" size="1.778" layer="95" rot="R90" align="center-left"/>
+<attribute name="VALUE" x="88.9" y="54.61" size="1.778" layer="96" rot="R90" align="center-left"/>
+</instance>
+<instance part="R9" gate="G$1" x="77.47" y="74.93" smashed="yes" rot="MR180">
+<attribute name="NAME" x="73.66" y="73.4314" size="1.778" layer="95" rot="MR180"/>
+<attribute name="VALUE" x="73.66" y="78.232" size="1.778" layer="96" rot="MR180"/>
+</instance>
+<instance part="R13" gate="G$1" x="83.82" y="67.31" smashed="yes" rot="MR90">
+<attribute name="NAME" x="85.3186" y="63.5" size="1.778" layer="95" rot="MR90"/>
+<attribute name="VALUE" x="80.518" y="63.5" size="1.778" layer="96" rot="MR90"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -14043,6 +14120,16 @@ Source: &lt;a href="http://www.injoinic.com/wwwroot/uploads/files/20230913/62355
 <wire x1="50.8" y1="31.75" x2="50.8" y2="29.21" width="0.1524" layer="91"/>
 <label x="50.8" y="29.21" size="1.27" layer="95" rot="R270" xref="yes"/>
 <pinref part="U$2" gate="G$1" pin="P$7"/>
+</segment>
+<segment>
+<pinref part="Q1" gate="G$1" pin="S"/>
+<wire x1="93.98" y1="69.85" x2="93.98" y2="59.69" width="0.1524" layer="91"/>
+<label x="93.98" y="59.69" size="1.27" layer="95" rot="R270" xref="yes"/>
+</segment>
+<segment>
+<pinref part="R13" gate="G$1" pin="1"/>
+<wire x1="83.82" y1="62.23" x2="83.82" y2="59.69" width="0.1524" layer="91"/>
+<label x="83.82" y="59.69" size="1.27" layer="95" rot="R270" xref="yes"/>
 </segment>
 </net>
 <net name="I2C_CLK" class="0">
@@ -14380,19 +14467,14 @@ Source: &lt;a href="http://www.injoinic.com/wwwroot/uploads/files/20230913/62355
 </net>
 <net name="P_ON" class="0">
 <segment>
-<wire x1="96.52" y1="85.09" x2="93.98" y2="85.09" width="0.1524" layer="91"/>
-<wire x1="96.52" y1="92.71" x2="93.98" y2="92.71" width="0.1524" layer="91"/>
-<wire x1="93.98" y1="92.71" x2="93.98" y2="85.09" width="0.1524" layer="91"/>
-<wire x1="93.98" y1="85.09" x2="91.44" y2="85.09" width="0.1524" layer="91"/>
-<junction x="93.98" y="85.09"/>
-<label x="91.44" y="85.09" size="1.27" layer="95" rot="MR0" xref="yes"/>
-<pinref part="R14" gate="G$1" pin="1"/>
-<pinref part="R16" gate="G$1" pin="1"/>
-</segment>
-<segment>
 <pinref part="IC2" gate="G$1" pin="PA6"/>
 <wire x1="167.64" y1="26.67" x2="167.64" y2="24.13" width="0.1524" layer="91"/>
 <label x="167.64" y="24.13" size="1.27" layer="95" rot="R270" xref="yes"/>
+</segment>
+<segment>
+<pinref part="R9" gate="G$1" pin="1"/>
+<wire x1="72.39" y1="74.93" x2="69.85" y2="74.93" width="0.1524" layer="91"/>
+<label x="69.85" y="74.93" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="N$8" class="0">
@@ -14687,6 +14769,30 @@ Source: &lt;a href="http://www.injoinic.com/wwwroot/uploads/files/20230913/62355
 <pinref part="LED_BUILTIN" gate="G$1" pin="A"/>
 <pinref part="R8" gate="G$1" pin="1"/>
 <wire x1="261.62" y1="63.5" x2="252.73" y2="63.5" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$1" class="0">
+<segment>
+<pinref part="Q1" gate="G$1" pin="G"/>
+<pinref part="R9" gate="G$1" pin="2"/>
+<wire x1="86.36" y1="74.93" x2="83.82" y2="74.93" width="0.1524" layer="91"/>
+<pinref part="R13" gate="G$1" pin="2"/>
+<wire x1="83.82" y1="74.93" x2="82.55" y2="74.93" width="0.1524" layer="91"/>
+<wire x1="83.82" y1="72.39" x2="83.82" y2="74.93" width="0.1524" layer="91"/>
+<junction x="83.82" y="74.93"/>
+</segment>
+</net>
+<net name="P_ON_DS" class="0">
+<segment>
+<wire x1="96.52" y1="85.09" x2="93.98" y2="85.09" width="0.1524" layer="91"/>
+<wire x1="96.52" y1="92.71" x2="93.98" y2="92.71" width="0.1524" layer="91"/>
+<wire x1="93.98" y1="92.71" x2="93.98" y2="85.09" width="0.1524" layer="91"/>
+<wire x1="93.98" y1="85.09" x2="91.44" y2="85.09" width="0.1524" layer="91"/>
+<junction x="93.98" y="85.09"/>
+<label x="91.44" y="85.09" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<pinref part="R14" gate="G$1" pin="1"/>
+<pinref part="R16" gate="G$1" pin="1"/>
+<pinref part="Q1" gate="G$1" pin="D"/>
 </segment>
 </net>
 </nets>

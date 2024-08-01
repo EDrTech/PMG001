@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.01" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.000123031496" altunitdist="mil" altunit="mil"/>
+<grid distance="0.4" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.000123031496" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="yes" active="yes"/>
@@ -215,6 +215,7 @@
 <wire x1="17.39" y1="10.81" x2="17.39" y2="12.9" width="0" layer="227"/>
 <wire x1="17.39" y1="12.9" x2="15.3" y2="12.9" width="0" layer="227"/>
 <wire x1="15.3" y1="12.9" x2="15.3" y2="10.81" width="0" layer="227"/>
+<circle x="2.9" y="14.9" radius="0.22360625" width="0" layer="21"/>
 </plain>
 <libraries>
 <library name="edrtech_lib">
@@ -320,8 +321,6 @@
 <text x="0.33" y="-2.2" size="0.7" layer="51" ratio="15" rot="R90">NRS5040</text>
 </package>
 <package name="SOP50P490X110-10N">
-<circle x="-3.5" y="1.25" radius="0.1" width="0.2" layer="21"/>
-<circle x="-3.5" y="1.25" radius="0.1" width="0.2" layer="51"/>
 <wire x1="-1.5" y1="1.5" x2="1.5" y2="1.5" width="0.127" layer="51"/>
 <wire x1="-1.5" y1="-1.5" x2="1.5" y2="-1.5" width="0.127" layer="51"/>
 <wire x1="-1.5" y1="1.5" x2="1.5" y2="1.5" width="0.127" layer="21"/>
@@ -332,8 +331,6 @@
 <wire x1="-3.135" y1="-1.75" x2="3.135" y2="-1.75" width="0.05" layer="39"/>
 <wire x1="-3.135" y1="1.75" x2="-3.135" y2="-1.75" width="0.05" layer="39"/>
 <wire x1="3.135" y1="1.75" x2="3.135" y2="-1.75" width="0.05" layer="39"/>
-<text x="-3" y="-2" size="1.016" layer="27" align="top-left">&gt;VALUE</text>
-<text x="-3" y="2" size="1.016" layer="25">&gt;NAME</text>
 <smd name="1" x="-2.15" y="1" dx="1.47" dy="0.28" layer="1" roundness="25"/>
 <smd name="2" x="-2.15" y="0.5" dx="1.47" dy="0.28" layer="1" roundness="25"/>
 <smd name="3" x="-2.15" y="0" dx="1.47" dy="0.28" layer="1" roundness="25"/>
@@ -1239,6 +1236,21 @@
 <vertex x="9.2" y="-0.325"/>
 <vertex x="9.2" y="0"/>
 </polygon>
+</package>
+<package name="PMZ290UNE2YL">
+<description>&lt;b&gt;PMZ290UNE2YL-3&lt;/b&gt;&lt;br&gt;
+</description>
+<smd name="1" x="-0.35" y="0.226" dx="0.4" dy="0.25" layer="1"/>
+<smd name="2" x="-0.35" y="-0.225" dx="0.4" dy="0.25" layer="1"/>
+<smd name="3" x="0.35" y="0.001" dx="0.7" dy="0.4" layer="1" rot="R90"/>
+<wire x1="-0.492" y1="0.292" x2="0.492" y2="0.292" width="0.1" layer="51"/>
+<wire x1="0.492" y1="0.292" x2="0.492" y2="-0.292" width="0.1" layer="51"/>
+<wire x1="0.492" y1="-0.292" x2="-0.492" y2="-0.292" width="0.1" layer="51"/>
+<wire x1="-0.492" y1="-0.292" x2="-0.492" y2="0.292" width="0.1" layer="51"/>
+<wire x1="-1.1" y1="0.226" x2="-1.1" y2="0.226" width="0.1" layer="21"/>
+<wire x1="-1.1" y1="0.226" x2="-1" y2="0.226" width="0.1" layer="21" curve="180"/>
+<wire x1="-1" y1="0.226" x2="-1" y2="0.226" width="0.1" layer="21"/>
+<wire x1="-1" y1="0.226" x2="-1.1" y2="0.226" width="0.1" layer="21" curve="180"/>
 </package>
 </packages>
 </library>
@@ -2694,9 +2706,9 @@ Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
 <attribute name="POPULARITY" value="18" x="-0.2605" y="5.429" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="SPICEPREFIX" value="C" x="-0.2605" y="5.429" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
-<element name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="20K" x="6.9445" y="2.254" smashed="yes" rot="R270">
-<attribute name="POPULARITY" value="0" x="6.9445" y="2.254" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="SPICEPREFIX" value="R" x="6.9445" y="2.254" size="1.778" layer="27" rot="R270" display="off"/>
+<element name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="20K" x="6.7445" y="2.254" smashed="yes" rot="R270">
+<attribute name="POPULARITY" value="0" x="6.7445" y="2.254" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="SPICEPREFIX" value="R" x="6.7445" y="2.254" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
 <element name="IC4" library="IP2312" package="SOIC127P600X165-9N" value="IP2312" x="16.3445" y="11.854" smashed="yes" rot="R180">
 <attribute name="ARROW_PART_NUMBER" value="" x="35.3945" y="3.091" size="1.778" layer="27" rot="R180" display="off"/>
@@ -2771,13 +2783,13 @@ Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
 <attribute name="POPULARITY" value="18" x="5.6445" y="2.225" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="SPICEPREFIX" value="C" x="5.6445" y="2.225" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
-<element name="R14" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="20K" x="13.3445" y="2.154" smashed="yes" rot="R90">
-<attribute name="POPULARITY" value="0" x="13.3445" y="2.154" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="SPICEPREFIX" value="R" x="13.3445" y="2.154" size="1.778" layer="27" rot="R90" display="off"/>
+<element name="R14" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="20K" x="14.8445" y="2.154" smashed="yes" rot="R90">
+<attribute name="POPULARITY" value="0" x="14.8445" y="2.154" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="SPICEPREFIX" value="R" x="14.8445" y="2.154" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
-<element name="R16" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="150R" x="14.9445" y="2.154" smashed="yes" rot="R90">
-<attribute name="POPULARITY" value="0" x="14.9445" y="2.154" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="SPICEPREFIX" value="R" x="14.9445" y="2.154" size="1.778" layer="27" rot="R90" display="off"/>
+<element name="R16" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="150R" x="15.9445" y="2.154" smashed="yes" rot="R90">
+<attribute name="POPULARITY" value="0" x="15.9445" y="2.154" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="SPICEPREFIX" value="R" x="15.9445" y="2.154" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
 <element name="IC6" library="edrtech_lib" package="DMP3036SFV7" value="DMP3013SFV-7" x="19.2445" y="5.254" smashed="yes" rot="R270">
 <attribute name="ARROW_PART_NUMBER" value="DMP3013SFV-7" x="14.2915" y="8.429" size="1.778" layer="27" rot="R270" display="off"/>
@@ -2808,19 +2820,19 @@ Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
 <attribute name="PURCHASE-URL" value="https://www.snapeda.com/api/url_track_click_mouser/?unipart_id=449361&amp;manufacturer=Texas Instruments&amp;part_name=ADS1015IDGSR&amp;search_term=ads1015" x="3.9445" y="3.754" size="1.778" layer="27" display="off"/>
 <attribute name="SNAPEDA_LINK" value="https://www.snapeda.com/parts/ADS1015IDGSR/Texas+Instruments/view-part/?ref=snap" x="3.9445" y="3.754" size="1.778" layer="27" display="off"/>
 </element>
-<element name="IC1" library="edrtech_lib" package="SOT96P240X110-3N" value="APX803D-29SAG-7" x="10.7445" y="2.254" smashed="yes">
-<attribute name="ARROW_PART_NUMBER" value="APX803D-29SAG-7" x="10.7445" y="2.254" size="1.778" layer="27" display="off"/>
-<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/apx803d-29sag-7/diodes-incorporated" x="10.7445" y="2.254" size="1.778" layer="27" display="off"/>
-<attribute name="DESCRIPTION" value="Supervisory Circuits 3-Pin MPU Reset 30uA 2.5V, 3V, 3.3V, 5V" x="10.7445" y="2.254" size="1.778" layer="27" display="off"/>
-<attribute name="HEIGHT" value="1.1mm" x="10.7445" y="2.254" size="1.778" layer="27" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="Diodes Incorporated" x="10.7445" y="2.254" size="1.778" layer="27" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="APX803D-29SAG-7" x="10.7445" y="2.254" size="1.778" layer="27" display="off"/>
-<attribute name="MOUSER_PART_NUMBER" value="621-APX803D-29SAG-7" x="10.7445" y="2.254" size="1.778" layer="27" display="off"/>
-<attribute name="MOUSER_PRICE-STOCK" value="http://www.mouser.com/Search/ProductDetail.aspx?qs=j2HO5yQWbRfEn7scG%2fxEEg%3d%3d" x="10.7445" y="2.254" size="1.778" layer="27" display="off"/>
+<element name="IC1" library="edrtech_lib" package="SOT96P240X110-3N" value="APX803D-29SAG-7" x="10.4445" y="2.254" smashed="yes">
+<attribute name="ARROW_PART_NUMBER" value="APX803D-29SAG-7" x="10.4445" y="2.254" size="1.778" layer="27" display="off"/>
+<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/apx803d-29sag-7/diodes-incorporated" x="10.4445" y="2.254" size="1.778" layer="27" display="off"/>
+<attribute name="DESCRIPTION" value="Supervisory Circuits 3-Pin MPU Reset 30uA 2.5V, 3V, 3.3V, 5V" x="10.4445" y="2.254" size="1.778" layer="27" display="off"/>
+<attribute name="HEIGHT" value="1.1mm" x="10.4445" y="2.254" size="1.778" layer="27" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="Diodes Incorporated" x="10.4445" y="2.254" size="1.778" layer="27" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="APX803D-29SAG-7" x="10.4445" y="2.254" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="621-APX803D-29SAG-7" x="10.4445" y="2.254" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="http://www.mouser.com/Search/ProductDetail.aspx?qs=j2HO5yQWbRfEn7scG%2fxEEg%3d%3d" x="10.4445" y="2.254" size="1.778" layer="27" display="off"/>
 </element>
-<element name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="100nF" x="8.2445" y="2.254" smashed="yes" rot="R270">
-<attribute name="POPULARITY" value="18" x="8.2445" y="2.254" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="SPICEPREFIX" value="C" x="8.2445" y="2.254" size="1.778" layer="27" rot="R270" display="off"/>
+<element name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="100nF" x="7.8445" y="2.354" smashed="yes" rot="R270">
+<attribute name="POPULARITY" value="18" x="7.8445" y="2.354" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="SPICEPREFIX" value="C" x="7.8445" y="2.354" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
 <element name="IC9" library="edrtech_lib" package="SOP65P280X145-8N" value="INA219AIDCNR" x="2.9445" y="5.654" smashed="yes" rot="R90">
 <attribute name="ARROW_PART_NUMBER" value="INA219AIDCNR" x="2.9445" y="5.654" size="1.778" layer="27" rot="R90" display="off"/>
@@ -2854,15 +2866,33 @@ Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
 <attribute name="POPULARITY" value="18" x="7.6445" y="4.054" size="1.778" layer="27" display="off"/>
 <attribute name="SPICEPREFIX" value="C" x="7.6445" y="4.054" size="1.778" layer="27" display="off"/>
 </element>
-<element name="R8" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="100R" x="16.5445" y="2.154" smashed="yes" rot="R270">
-<attribute name="POPULARITY" value="0" x="28.5445" y="2.154" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="SPICEPREFIX" value="R" x="28.5445" y="2.154" size="1.778" layer="27" rot="R270" display="off"/>
+<element name="R8" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="100R" x="17.0445" y="2.154" smashed="yes" rot="R270">
+<attribute name="POPULARITY" value="0" x="29.0445" y="2.154" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="SPICEPREFIX" value="R" x="29.0445" y="2.154" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
 <element name="LED_BUILTIN" library="adafruit" package="CHIPLED_0603" value="" x="18.0445" y="2.154" smashed="yes" rot="R180">
 <attribute name="VALUE" x="16.1395" y="3.424" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="U$1" library="edrtech_lib" package="1.27_MALE_16P_HEADER" value="1.27_MALE_16P_HEADER" x="11.1125" y="16.51" smashed="yes"/>
 <element name="U$2" library="edrtech_lib" package="1.27_MALE_16P_HEADER" value="1.27_MALE_16P_HEADER" x="11.1125" y="0" smashed="yes" rot="R180"/>
+<element name="Q1" library="edrtech_lib" package="PMZ290UNE2YL" value="PMZ290UNE2YL" x="13.568" y="2.737" smashed="yes">
+<attribute name="ARROW_PART_NUMBER" value="PMZ290UNE2YL" x="9.268" y="8.237" size="1.778" layer="27" display="off"/>
+<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/pmz290une2yl/nexperia?region=nac" x="9.268" y="8.237" size="1.778" layer="27" display="off"/>
+<attribute name="DESCRIPTION" value="NEXPERIA - PMZ290UNE2YL - MOSFET, N-CH, 20V, 1.2A, SOT883-3" x="9.268" y="8.237" size="1.778" layer="27" display="off"/>
+<attribute name="HEIGHT" value="0.5mm" x="9.268" y="8.237" size="1.778" layer="27" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="Nexperia" x="9.268" y="8.237" size="1.778" layer="27" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="PMZ290UNE2YL" x="9.268" y="8.237" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="771-PMZ290UNE2YL" x="9.268" y="8.237" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Nexperia/PMZ290UNE2YL?qs=d7b8vw%252BBfo36oSq9BwEp0w%3D%3D" x="9.268" y="8.237" size="1.778" layer="27" display="off"/>
+</element>
+<element name="R9" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="150R" x="13.2" y="1.8" smashed="yes" rot="R180">
+<attribute name="POPULARITY" value="0" x="13.2" y="3.3" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="SPICEPREFIX" value="R" x="13.2" y="3.3" size="1.778" layer="27" rot="R180" display="off"/>
+</element>
+<element name="R13" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="20K" x="15.019" y="3.6" smashed="yes" rot="R180">
+<attribute name="POPULARITY" value="0" x="15.019" y="5.1" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="SPICEPREFIX" value="R" x="15.019" y="5.1" size="1.778" layer="27" rot="R180" display="off"/>
+</element>
 </elements>
 <signals>
 <signal name="GND" airwireshidden="yes">
@@ -2891,16 +2921,16 @@ Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
 <contactref element="C2" pad="2"/>
 <contactref element="U1" pad="1"/>
 <polygon width="0" layer="1" thermals="no" rank="6">
-<vertex x="0" y="0"/>
-<vertex x="22.225" y="0"/>
-<vertex x="22.225" y="16.51"/>
-<vertex x="0" y="16.51"/>
+<vertex x="0.4" y="0"/>
+<vertex x="21.825" y="0"/>
+<vertex x="21.825" y="16.51"/>
+<vertex x="0.4" y="16.51"/>
 </polygon>
 <polygon width="0" layer="16" thermals="no" rank="6">
-<vertex x="0" y="0"/>
-<vertex x="22.225" y="0"/>
-<vertex x="22.225" y="16.51"/>
-<vertex x="0" y="16.51"/>
+<vertex x="0.4" y="0"/>
+<vertex x="21.825" y="0"/>
+<vertex x="21.825" y="16.51"/>
+<vertex x="0.4" y="16.51"/>
 </polygon>
 <contactref element="C1" pad="2"/>
 <contactref element="IC1" pad="1"/>
@@ -2911,22 +2941,22 @@ Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
 <contactref element="C3" pad="2"/>
 <contactref element="LED_BUILTIN" pad="C"/>
 <polygon width="0.127" layer="14" thermals="no">
-<vertex x="0" y="0"/>
-<vertex x="0" y="16.51"/>
-<vertex x="22.225" y="16.51"/>
-<vertex x="22.225" y="0"/>
+<vertex x="0.4" y="0"/>
+<vertex x="0.4" y="16.51"/>
+<vertex x="21.825" y="16.51"/>
+<vertex x="21.825" y="0"/>
 </polygon>
 <polygon width="0.127" layer="15" thermals="no">
-<vertex x="0" y="0"/>
-<vertex x="0" y="16.51"/>
-<vertex x="22.225" y="16.51"/>
-<vertex x="22.225" y="0"/>
+<vertex x="0.4" y="0"/>
+<vertex x="0.4" y="16.51"/>
+<vertex x="21.825" y="16.51"/>
+<vertex x="21.825" y="0"/>
 </polygon>
 <polygon width="0.127" layer="16" thermals="no" rank="6">
-<vertex x="0" y="0"/>
-<vertex x="0" y="16.51"/>
-<vertex x="22.225" y="16.51"/>
-<vertex x="22.225" y="0"/>
+<vertex x="0.4" y="0"/>
+<vertex x="0.4" y="16.51"/>
+<vertex x="21.825" y="16.51"/>
+<vertex x="21.825" y="0"/>
 </polygon>
 <contactref element="U$2" pad="P$8"/>
 <contactref element="U$2" pad="P$3"/>
@@ -2979,10 +3009,10 @@ Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
 <wire x1="18.0975" y1="16.51" x2="18.0975" y2="16.067184375" width="1.016" layer="15"/>
 <wire x1="13.0175" y1="0" x2="13.0175" y2="0.820525" width="1.016" layer="16"/>
 <polygon width="0.127" layer="3" thermals="no">
-<vertex x="0" y="0"/>
-<vertex x="0" y="16.51"/>
-<vertex x="22.225" y="16.51"/>
-<vertex x="22.225" y="0"/>
+<vertex x="0.4" y="0"/>
+<vertex x="0.4" y="16.51"/>
+<vertex x="21.825" y="16.51"/>
+<vertex x="21.825" y="0"/>
 </polygon>
 <wire x1="11.7475" y1="0" x2="11.7475" y2="0.776303125" width="1.016" layer="3"/>
 <wire x1="16.8275" y1="0" x2="16.8275" y2="0.796209375" width="1.016" layer="3"/>
@@ -2997,8 +3027,6 @@ Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
 <via x="2.412375" y="5.39228125" extent="1-16" drill="0.3"/>
 <via x="5.38993125" y="3.59854375" extent="1-16" drill="0.3"/>
 <via x="10.715265625" y="1.357815625" extent="1-16" drill="0.3"/>
-<via x="14.943034375" y="0.99945625" extent="1-16" drill="0.3"/>
-<via x="17.276990625" y="2.088553125" extent="1-16" drill="0.3"/>
 <wire x1="11.7475" y1="0" x2="11.7475" y2="0.875853125" width="1.016" layer="16"/>
 <wire x1="13.0175" y1="0" x2="13.0175" y2="0.739909375" width="1.016" layer="1"/>
 <wire x1="11.7475" y1="0" x2="11.7475" y2="1.046375" width="1.016" layer="1"/>
@@ -3025,6 +3053,9 @@ Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
 <vertex x="17.39" y="10.81"/>
 <vertex x="17.39" y="12.9"/>
 </polygon>
+<contactref element="Q1" pad="2"/>
+<contactref element="R13" pad="1"/>
+<via x="15.53566875" y="3.594759375" extent="1-16" drill="0.3"/>
 <wire x1="18.0975" y1="15.766059375" x2="18.49596875" y2="15.819896875" width="0" layer="19" extent="1-3"/>
 </signal>
 <signal name="3V3" airwireshidden="yes">
@@ -3051,8 +3082,8 @@ Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
 <vertex x="7.72731875" y="5.563384375"/>
 <vertex x="7.72731875" y="10.944946875"/>
 <vertex x="12.804634375" y="16.51"/>
-<vertex x="0" y="16.51"/>
-<vertex x="0" y="0"/>
+<vertex x="0.4" y="16.51"/>
+<vertex x="0.4" y="0"/>
 </polygon>
 <polygon width="0.127" layer="1" thermals="no">
 <vertex x="1.258421875" y="3.1916125"/>
@@ -3144,12 +3175,11 @@ Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
 <wire x1="6.366" y1="6.2714" x2="5.6445" y2="6.9929" width="0.2032" layer="3"/>
 <wire x1="6.366" y1="4.9715375" x2="6.366" y2="6.2714" width="0.2032" layer="3"/>
 <wire x1="8.4825" y1="4.092865625" x2="8.4825" y2="5.154" width="0.2032" layer="14"/>
-<wire x1="15.5232" y1="2.681234375" x2="14.616875" y2="3.587559375" width="0.2032" layer="14"/>
+<wire x1="15.5575" y1="2.646934375" x2="14.616875" y2="3.587559375" width="0.2032" layer="14"/>
 <wire x1="14.616875" y1="3.587559375" x2="8.98780625" y2="3.587559375" width="0.2032" layer="14"/>
 <wire x1="8.98780625" y1="3.587559375" x2="8.4825" y2="4.092865625" width="0.2032" layer="14"/>
 <contactref element="U$2" pad="P$5"/>
 <wire x1="15.5575" y1="0" x2="15.5575" y2="2.646934375" width="0.2032" layer="14"/>
-<wire x1="15.5575" y1="2.646934375" x2="15.5232" y2="2.681234375" width="0.2032" layer="14"/>
 </signal>
 <signal name="I2C_SDA">
 <contactref element="IC2" pad="13"/>
@@ -3245,9 +3275,9 @@ Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
 <wire x1="4.4445" y1="8.9269" x2="4.827378125" y2="8.544021875" width="0.2032" layer="1"/>
 <via x="4.827378125" y="8.544021875" extent="1-16" drill="0.3" diameter="0.45"/>
 <wire x1="4.827378125" y1="8.544021875" x2="15.74604375" y2="8.544021875" width="0.2032" layer="3"/>
-<wire x1="16.5445" y1="7.745565625" x2="16.5445" y2="1.654" width="0.2032" layer="3"/>
-<via x="16.5445" y="1.654" extent="1-16" drill="0.3" diameter="0.45"/>
-<wire x1="15.74604375" y1="8.544021875" x2="16.5445" y2="7.745565625" width="0.2032" layer="3"/>
+<wire x1="17.0445" y1="7.245565625" x2="17.0445" y2="1.654" width="0.2032" layer="3"/>
+<via x="17.0445" y="1.654" extent="1-16" drill="0.3" diameter="0.45"/>
+<wire x1="15.74604375" y1="8.544021875" x2="17.0445" y2="7.245565625" width="0.2032" layer="3"/>
 </signal>
 <signal name="PB2">
 <contactref element="IC2" pad="12"/>
@@ -3333,12 +3363,12 @@ Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
 <contactref element="IC3" pad="6"/>
 <contactref element="IC1" pad="2"/>
 <contactref element="R1" pad="2"/>
-<wire x1="9.6945" y1="1.294" x2="9.00390625" y2="1.294" width="0.2032" layer="1"/>
+<wire x1="9.3945" y1="1.294" x2="9.00390625" y2="1.294" width="0.2032" layer="1"/>
 <wire x1="9.00390625" y1="1.294" x2="8.77340625" y2="1.0635" width="0.2032" layer="1"/>
-<wire x1="6.9872875" y1="1.754" x2="6.9445" y2="1.754" width="0.2032" layer="1"/>
-<wire x1="8.77340625" y1="1.0635" x2="7.6777875" y2="1.0635" width="0.2032" layer="1"/>
-<wire x1="7.6777875" y1="1.0635" x2="6.9872875" y2="1.754" width="0.2032" layer="1"/>
-<wire x1="6.9445" y1="1.754" x2="6.56390625" y2="1.754" width="0.2032" layer="1"/>
+<wire x1="8.77340625" y1="1.0635" x2="7.40814375" y2="1.0635" width="0.2032" layer="1"/>
+<wire x1="7.40814375" y1="1.0635" x2="6.7445" y2="1.72714375" width="0.2032" layer="1"/>
+<wire x1="6.7445" y1="1.754" x2="6.7445" y2="1.72714375" width="0.2032" layer="1"/>
+<wire x1="6.7445" y1="1.754" x2="6.56390625" y2="1.754" width="0.2032" layer="1"/>
 <wire x1="6.56390625" y1="1.754" x2="6.17340625" y2="2.1445" width="0.2032" layer="1"/>
 <wire x1="4.88646875" y1="2.054" x2="4.3445" y2="2.054" width="0.2032" layer="1"/>
 <wire x1="6.17340625" y1="2.1445" x2="4.97696875" y2="2.1445" width="0.2032" layer="1"/>
@@ -3359,8 +3389,8 @@ Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
 </polygon>
 <polygon width="0.127" layer="16" thermals="no" rank="2">
 <vertex x="12.709384375" y="16.50400625"/>
-<vertex x="22.21741875" y="16.50400625"/>
-<vertex x="22.21741875" y="7.8188875"/>
+<vertex x="21.81741875" y="16.50400625"/>
+<vertex x="21.81741875" y="7.8188875"/>
 <vertex x="14.0201125" y="7.8188875"/>
 <vertex x="12.709384375" y="9.129615625"/>
 </polygon>
@@ -3503,14 +3533,14 @@ Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
 <contactref element="D15" pad="C"/>
 <contactref element="IC9" pad="1"/>
 <polygon width="0.127" layer="2" thermals="no">
-<vertex x="22.225" y="16.51"/>
+<vertex x="21.825" y="16.51"/>
 <vertex x="13.11241875" y="16.51"/>
 <vertex x="7.9445" y="10.854"/>
 <vertex x="7.9445" y="5.654"/>
 <vertex x="9.4445" y="4.154"/>
 <vertex x="11.2445" y="4.154"/>
 <vertex x="14.6445" y="7.554"/>
-<vertex x="22.225" y="7.554"/>
+<vertex x="21.825" y="7.554"/>
 </polygon>
 <polygon width="0.127" layer="1" thermals="no">
 <vertex x="9.307428125" y="4.2191"/>
@@ -3592,11 +3622,9 @@ Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
 <vertex x="4.108753125" y="2.4172875"/>
 <vertex x="8.6812125" y="2.4172875"/>
 <vertex x="9.106484375" y="1.992015625"/>
-<vertex x="12.682515625" y="1.992015625"/>
-<vertex x="13.10825" y="2.41775"/>
-<vertex x="13.70825" y="2.41775"/>
-<vertex x="14.78315625" y="3.49265625"/>
-<vertex x="16.18315625" y="3.49265625"/>
+<vertex x="12.082515625" y="1.992015625"/>
+<vertex x="14.18315625" y="4.09265625"/>
+<vertex x="16.78315625" y="4.09265625"/>
 <vertex x="17.471078125" y="4.780578125"/>
 <vertex x="18.0322375" y="4.780578125"/>
 <vertex x="18.0322375" y="7.1662625"/>
@@ -3619,10 +3647,13 @@ Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
 <wire x1="5.2369625" y1="4.37600625" x2="6.23325" y2="3.37971875" width="0.2032" layer="3"/>
 <wire x1="13.187984375" y1="4.496425" x2="13.187984375" y2="5.5470125" width="0.2032" layer="3"/>
 <wire x1="13.187984375" y1="5.5470125" x2="13.394971875" y2="5.754" width="0.2032" layer="3"/>
+<wire x1="14.8445" y1="2.654" x2="14.8445" y2="3.00609375" width="0.2032" layer="1"/>
+<wire x1="14.8445" y1="3.00609375" x2="15.0095" y2="3.17109375" width="0.2032" layer="1"/>
+<wire x1="15.0095" y1="3.17109375" x2="15.0095" y2="4.0875" width="0.2032" layer="1"/>
+<wire x1="15.8445" y1="4.9225" x2="15.8445" y2="5.754" width="0.2032" layer="1"/>
+<wire x1="15.0095" y1="4.0875" x2="15.8445" y2="4.9225" width="0.2032" layer="1"/>
 </signal>
 <signal name="P_ON">
-<contactref element="R14" pad="1"/>
-<contactref element="R16" pad="1"/>
 <contactref element="IC2" pad="7"/>
 <wire x1="3.3445" y1="11.454" x2="3.3445" y2="11.9408125" width="0.2032" layer="1"/>
 <wire x1="3.5965875" y1="12.1929" x2="3.80645625" y2="12.1929" width="0.2032" layer="1"/>
@@ -3632,19 +3663,19 @@ Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
 <wire x1="3.80645625" y1="10.008734375" x2="4.206996875" y2="9.60819375" width="0.2032" layer="14"/>
 <wire x1="4.206996875" y1="9.60819375" x2="5.882565625" y2="9.60819375" width="0.2032" layer="14"/>
 <wire x1="6.2364" y1="2.742559375" x2="6.752959375" y2="2.226" width="0.2032" layer="14"/>
-<wire x1="12.7725" y1="2.226" x2="13.3445" y2="1.654" width="0.2032" layer="14"/>
-<via x="13.3445" y="1.654" extent="1-16" drill="0.3" diameter="0.45"/>
-<wire x1="13.3445" y1="1.654" x2="14.9445" y2="1.654" width="0.2032" layer="1"/>
 <wire x1="6.2364" y1="9.254359375" x2="6.2364" y2="2.742559375" width="0.2032" layer="14"/>
-<wire x1="6.752959375" y1="2.226" x2="12.7725" y2="2.226" width="0.2032" layer="14"/>
+<wire x1="6.752959375" y1="2.226" x2="13.274" y2="2.226" width="0.2032" layer="14"/>
 <wire x1="6.2364" y1="9.254359375" x2="5.882565625" y2="9.60819375" width="0.2032" layer="14"/>
+<contactref element="R9" pad="1"/>
+<wire x1="13.274" y1="2.226" x2="13.7" y2="1.8" width="0.2032" layer="14"/>
+<via x="13.7" y="1.8" extent="1-16" drill="0.3" diameter="0.4"/>
 </signal>
 <signal name="N$6">
 <contactref element="IC6" pad="4"/>
 <contactref element="R16" pad="2"/>
-<wire x1="14.9445" y1="2.654" x2="15.435" y2="3.1445" width="0.2032" layer="1"/>
+<wire x1="15.9445" y1="2.654" x2="16.435" y2="3.1445" width="0.2032" layer="1"/>
 <wire x1="17.586071875" y1="4.279" x2="17.7445" y2="4.279" width="0.2032" layer="1"/>
-<wire x1="15.435" y1="3.1445" x2="16.451571875" y2="3.1445" width="0.2032" layer="1"/>
+<wire x1="16.435" y1="3.1445" x2="16.451571875" y2="3.1445" width="0.2032" layer="1"/>
 <wire x1="16.451571875" y1="3.1445" x2="17.586071875" y2="4.279" width="0.2032" layer="1"/>
 </signal>
 <signal name="BAT_OUT">
@@ -3654,15 +3685,15 @@ Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
 <contactref element="IC6" pad="6"/>
 <contactref element="IC6" pad="5"/>
 <polygon width="0.127" layer="2" thermals="no">
-<vertex x="22.225" y="7.335871875"/>
+<vertex x="21.825" y="7.335871875"/>
 <vertex x="14.732625" y="7.335871875"/>
 <vertex x="11.3445" y="3.947746875"/>
 <vertex x="11.3445" y="0"/>
-<vertex x="22.225" y="0"/>
+<vertex x="21.825" y="0"/>
 </polygon>
 <polygon width="0.127" layer="16" thermals="no">
-<vertex x="22.225" y="0"/>
-<vertex x="22.225" y="7.602296875"/>
+<vertex x="21.825" y="0"/>
+<vertex x="21.825" y="7.602296875"/>
 <vertex x="16.393928125" y="7.602296875"/>
 <vertex x="16.396659375" y="7.415659375"/>
 <vertex x="16.396659375" y="0"/>
@@ -3700,9 +3731,7 @@ Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
 <contactref element="U$1" pad="P$3"/>
 <wire x1="4.1275" y1="16.51" x2="4.1275" y2="16.34486875" width="0.2032" layer="1"/>
 <wire x1="4.1275" y1="16.34486875" x2="2.78645625" y2="15.003825" width="0.2032" layer="1"/>
-<wire x1="2.78645625" y1="15.003825" x2="2.78645625" y2="14.8189125" width="0.2032" layer="1"/>
-<wire x1="2.78645625" y1="13.62205" x2="2.78645625" y2="14.8189125" width="0.2032" layer="1"/>
-<wire x1="2.78645625" y1="14.8189125" x2="2.78645625" y2="14.8189125" width="0.2032" layer="1"/>
+<wire x1="2.78645625" y1="13.62205" x2="2.78645625" y2="15.003825" width="0.2032" layer="1"/>
 </signal>
 <signal name="AIN1">
 <contactref element="U1" pad="5"/>
@@ -3780,16 +3809,35 @@ Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
 <signal name="N$2">
 <contactref element="LED_BUILTIN" pad="A"/>
 <contactref element="R8" pad="1"/>
-<wire x1="16.5445" y1="2.654" x2="17.072121875" y2="2.654" width="0.2032" layer="1"/>
+<wire x1="17.0445" y1="2.654" x2="17.072121875" y2="2.654" width="0.2032" layer="1"/>
 <wire x1="17.322121875" y1="2.904" x2="18.0445" y2="2.904" width="0.2032" layer="1"/>
 <wire x1="17.072121875" y1="2.654" x2="17.322121875" y2="2.904" width="0.2032" layer="1"/>
+</signal>
+<signal name="N$1">
+<contactref element="Q1" pad="1"/>
+<contactref element="R9" pad="2"/>
+<contactref element="R13" pad="2"/>
+<wire x1="12.7" y1="1.8" x2="12.7" y2="2.667" width="0.2032" layer="1"/>
+<wire x1="12.996" y1="2.963" x2="13.218" y2="2.963" width="0.2032" layer="1"/>
+<wire x1="12.7" y1="2.667" x2="12.996" y2="2.963" width="0.2032" layer="1"/>
+<wire x1="13.218" y1="2.963" x2="13.855" y2="3.6" width="0.2032" layer="1"/>
+<wire x1="13.855" y1="3.6" x2="14.519" y2="3.6" width="0.2032" layer="1"/>
+</signal>
+<signal name="P_ON_DS">
+<contactref element="R14" pad="1"/>
+<contactref element="R16" pad="1"/>
+<contactref element="Q1" pad="3"/>
+<wire x1="14.8445" y1="1.654" x2="15.9445" y2="1.654" width="0.2032" layer="1"/>
+<wire x1="13.918" y1="2.738" x2="13.918" y2="2.50140625" width="0.2032" layer="1"/>
+<wire x1="14.76540625" y1="1.654" x2="14.8445" y2="1.654" width="0.2032" layer="1"/>
+<wire x1="13.918" y1="2.50140625" x2="14.76540625" y2="1.654" width="0.2032" layer="1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
 <mfgpreviewcolor name="soldermaskcolor" color="0xC8111111"/>
 <mfgpreviewcolor name="silkscreencolor" color="0xFFFEFEFE"/>
 <mfgpreviewcolor name="backgroundcolor" color="0xFF282828"/>
-<mfgpreviewcolor name="coppercolor" color="0xFFD7DBFF"/>
+<mfgpreviewcolor name="coppercolor" color="0xFFFFE1A4"/>
 <mfgpreviewcolor name="substratecolor" color="0xFF786E46"/>
 </mfgpreviewcolors>
 <errors>
@@ -3810,16 +3858,12 @@ Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
 <approved hash="5,1,dd1d793efd187e80"/>
 <approved hash="5,1,561b325a88f56406"/>
 <approved hash="5,1,33b565601e42cd40"/>
-<approved hash="5,1,b5f01acf8565fad8"/>
 <approved hash="5,1,c188a0ec6b92a046"/>
 <approved hash="5,1,f80dac58bd842224"/>
 <approved hash="5,1,35e918c4535af6c5"/>
-<approved hash="5,1,e9ea3cdc9a49a7c6"/>
-<approved hash="5,1,0dede8fcd7634ac1"/>
 <approved hash="5,1,14eba58f30e30c45"/>
 <approved hash="5,1,6ee9c787ab933145"/>
 <approved hash="5,1,7eef93a949be8343"/>
-<approved hash="5,1,e26114faafdd0f3c"/>
 <approved hash="5,1,4a8ac1d4d707a3ea"/>
 <approved hash="5,1,e2067eeecad82108"/>
 <approved hash="5,1,0607161682b7c219"/>
@@ -3829,15 +3873,11 @@ Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
 <approved hash="5,16,b3153f06382af988"/>
 <approved hash="5,16,561b325a88f56406"/>
 <approved hash="5,16,7218ee49d9edad05"/>
-<approved hash="5,16,81c82ac5bc57f7e2"/>
-<approved hash="5,16,a0799ed32874a420"/>
-<approved hash="5,16,0bf68da7f5c16d14"/>
 <approved hash="5,16,911ea8fdd0a89537"/>
 <approved hash="5,16,6dce4efe1e6dd5e4"/>
 <approved hash="5,16,f219123e639f233a"/>
 <approved hash="5,16,d625064006dd063a"/>
 <approved hash="5,16,a61f0a6334cde002"/>
-<approved hash="5,16,fdc38ea2da3501e9"/>
 <approved hash="5,16,891b69134f369c86"/>
 <approved hash="5,16,db197f71bc5e6d84"/>
 <approved hash="5,16,411121402360e08d"/>
@@ -3845,8 +3885,6 @@ Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
 <approved hash="5,16,eb1b1363723e0784"/>
 <approved hash="5,16,6d1d016bc14ac281"/>
 <approved hash="5,16,da1b6e1f65bf7906"/>
-<approved hash="5,16,11f64886f516fcd9"/>
-<approved hash="5,16,6ce9fdc5bcd54845"/>
 <approved hash="5,16,01d598ec314078fb"/>
 <approved hash="5,16,15d5bcae143e1dc7"/>
 <approved hash="5,16,0607161682b7c219"/>
@@ -4128,49 +4166,33 @@ Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
 <approved hash="7,39,859eed89af7dbf66"/>
 <approved hash="7,39,78bdba023a02f8bd"/>
 <approved hash="7,39,a6d26615e61526d2"/>
-<approved hash="7,39,2c85ecda6cdaac85"/>
-<approved hash="7,39,940a5755d7561409"/>
 <approved hash="7,39,8e423a6ca7dc6bee"/>
 <approved hash="7,39,74d76ec4da4bba3d"/>
 <approved hash="7,39,02d76d78af8eb83d"/>
 <approved hash="7,39,087aba23a7da6da7"/>
-<approved hash="5,1,15d5bcae143e1dc7"/>
-<approved hash="5,1,0296e2f6592e19ac"/>
 <approved hash="5,1,5cc0b1f4ade2e36a"/>
 <approved hash="5,16,ff706312592a8326"/>
-<approved hash="5,16,accc09a469b6ff66"/>
 <approved hash="5,16,14eba58f30e30c45"/>
 <approved hash="5,16,5ac8e1a122c7a22c"/>
 <approved hash="21,19,63ef61e159e15bef"/>
-<approved hash="5,1,8504cc699cb64603"/>
 <approved hash="5,1,b2689af495a499b4"/>
 <approved hash="5,1,81c82ac5bc57f7e2"/>
 <approved hash="5,1,8feaad708aa08fba"/>
-<approved hash="5,1,a6d047fa76ecf27a"/>
 <approved hash="5,1,78eb95ef5af1c247"/>
 <approved hash="5,1,6536ba78c0b013ae"/>
-<approved hash="5,1,06ee23fbf5ebbf43"/>
 <approved hash="5,1,69e9948e4e1f1bc5"/>
 <approved hash="5,1,11f64886f516fcd9"/>
-<approved hash="5,1,38e7fd9bce86464b"/>
-<approved hash="5,1,bc8b9b7692a6bed5"/>
-<approved hash="5,16,0dede8fcd7634ac1"/>
-<approved hash="5,16,f6cc7bcfd4d62c67"/>
 <approved hash="5,16,1b245c769f30dbe4"/>
-<approved hash="5,16,10cea1d8e3cb3d60"/>
 <approved hash="5,16,4656f626f2bf47be"/>
 <approved hash="5,16,35e918c4535af6c5"/>
-<approved hash="5,16,26e20fd1d7c05d4f"/>
 <approved hash="5,16,38e7fd9bce86464b"/>
 <approved hash="5,16,7eef93a949be8343"/>
 <approved hash="23,2,00f81440124f06f7"/>
-<approved hash="23,2,2042effae993262b"/>
 <approved hash="23,2,2692ba2abc8d2035"/>
 <approved hash="23,2,4e4c3df43bc3487b"/>
 <approved hash="23,2,2c38f980fa842f3c"/>
 <approved hash="4,1,42cb325793fd9746"/>
 <approved hash="4,1,bbdfcb588e674ad2"/>
-<approved hash="4,1,a2dbce3f81844956"/>
 <approved hash="4,2,965df28ffa645c8b"/>
 <approved hash="4,2,7641fa9546e20817"/>
 <approved hash="4,2,5dac1c7e52a7dd48"/>
@@ -4187,16 +4209,55 @@ Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
 <approved hash="4,15,59b01a3c5df9dc54"/>
 <approved hash="4,16,5cd47b2b7b0b82b0"/>
 <approved hash="23,16,6a4ed566c9797651"/>
-<approved hash="5,16,c40b19f4b76a1390"/>
 <approved hash="5,16,10fabe844f8401fd"/>
 <approved hash="5,16,6589b3a30d602453"/>
-<approved hash="5,16,5800f85bb07b6399"/>
 <approved hash="5,16,cd3a488894fb3c0d"/>
 <approved hash="4,16,5992780804ec8776"/>
 <approved hash="4,16,1aa21b01a856efc6"/>
 <approved hash="4,16,e4460090901616e8"/>
 <approved hash="23,16,28d11b691bc4287c"/>
 <approved hash="23,16,f369f079f085f395"/>
+<approved hash="4,1,45a19a56ef820646"/>
+<approved hash="4,1,5cd47b2b7b0b82b0"/>
+<approved hash="4,3,5cd47b2b7b0b82b0"/>
+<approved hash="4,16,45a19a56ef820646"/>
+<approved hash="7,39,588718d898d8d887"/>
+<approved hash="7,39,30be0f7e8f7eb0be"/>
+<approved hash="7,39,fcbaeebd2a211e26"/>
+<approved hash="7,39,f832b8f238f27832"/>
+<approved hash="7,39,91b35073d07311b3"/>
+<approved hash="7,39,89439b438685f683"/>
+<approved hash="7,39,014dc60e460e814d"/>
+<approved hash="7,39,c5478a040a044547"/>
+<approved hash="7,39,18485708d7089848"/>
+<approved hash="7,39,800c4353c354000b"/>
+<approved hash="5,1,59ccbedb83421ce6"/>
+<approved hash="5,1,a9f40289a81fa3e0"/>
+<approved hash="5,1,6ce9fdc5bcd54845"/>
+<approved hash="5,1,9e30dbe31b235d76"/>
+<approved hash="5,1,4f521602a746f292"/>
+<approved hash="5,1,7a1cd5f4a648a942"/>
+<approved hash="5,1,10cea1d8e3cb3d60"/>
+<approved hash="5,1,06ab2dfbafa3d289"/>
+<approved hash="5,1,01d598ec314078fb"/>
+<approved hash="5,1,6dce4efe1e6dd5e4"/>
+<approved hash="5,1,21038b6fcf24f690"/>
+<approved hash="5,1,56ccb3b6a0ad0866"/>
+<approved hash="5,16,1390c40b19f4b76a"/>
+<approved hash="5,16,5cc0b1f4ade2e36a"/>
+<approved hash="5,16,05ce92bbe12e26e4"/>
+<approved hash="5,16,2d8d12a1177e9aac"/>
+<approved hash="5,16,a6d047fa76ecf27a"/>
+<approved hash="5,16,9a05c60101c72e7a"/>
+<approved hash="5,16,78eb95ef5af1c247"/>
+<approved hash="5,16,6ee9c787ab933145"/>
+<approved hash="5,16,4f521602a746f292"/>
+<approved hash="5,16,f5c16d140bf68da7"/>
+<approved hash="5,16,59ccbedb83421ce6"/>
+<approved hash="5,16,9debf4e0a07429c7"/>
+<approved hash="5,16,06ee23fbf5ebbf43"/>
+<approved hash="5,16,69e9948e4e1f1bc5"/>
+<approved hash="23,2,2042effae993262b"/>
 </errors>
 </board>
 </drawing>
