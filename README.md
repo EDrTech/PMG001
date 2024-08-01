@@ -42,7 +42,7 @@ To program this module you will need the following:
 There's no need to install any additional libraries as the example code only uses the wire library to handle I2C, the rest is in the [example](pmg001_default/pmg001_default.ino) code. Keep in mind that some register values are hardcoded, which is not the best way to handle something like that but is done here for the sake of simplicity. You can use external libraries with this module without issues, you just need to redefine I2C adresses of devices as they don't necessarily match with other libraries.
 
 Board settings should be set up like this:
-[screenshot](docs/visual/arduino_ide_settings.png)
+![Arduino IDE board settings](docs/visual/arduino_ide_settings.png)
 
 Default code provides basic power management and monitoring - press PWR_SW for >500ms and BAT_OUT will turn on, hold PWR_SW for >3s and BAT_OUT will turn off.
 
@@ -50,9 +50,9 @@ For more information, please read the [datasheet](PMG001_datasheet.pdf).
     
 ## Module Schematic
 
-[screenshot](docs/visual/schematic_module_wb.png)
+![Module schematic](docs/visual/schematic_module_wb.png)
 
 
 ## Breakout board Schematic
 
-[screenshot](docs/visual/schematic_breakout_wb.png)
+![Breakout schematic](docs/visual/schematic_breakout_wb.png)
