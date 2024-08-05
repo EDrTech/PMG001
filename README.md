@@ -35,24 +35,37 @@ development board for the ATTINY1616, with all
 
 To program this module you will need the following:
 
-- Arduino ide (Or other IDE of your choosing)
+- Arduino DE (Or other IDE of your choosing)
 - [megaTinyCore](https://github.com/SpenceKonde/megaTinyCore)
 - Demo kit with the module soldered on
 
 There's no need to install any additional libraries as the example code only uses the wire library to handle I2C, the rest is in the [example](pmg001_default/pmg001_default.ino) code. Keep in mind that some register values are hardcoded, which is not the best way to handle something like that but is done here for the sake of simplicity. You can use external libraries with this module without issues, you just need to redefine I2C adresses of devices as they don't necessarily match with other libraries.
 
+
+
 Board settings should be set up like this:
+
 ![Arduino IDE board settings](docs/visual/arduino_ide_settings.png)
+
+
 
 Default code provides basic power management and monitoring - press PWR_SW for >500ms and BAT_OUT will turn on, hold PWR_SW for >3s and BAT_OUT will turn off.
 
 For more information, please read the [datasheet](PMG001_datasheet.pdf).
+
+
     
 ## Module Schematic
+
+
 
 ![Module schematic](docs/visual/schematic_module_wb.png)
 
 
+
+
 ## Breakout board Schematic
+
+
 
 ![Breakout schematic](docs/visual/schematic_breakout_wb.png)
