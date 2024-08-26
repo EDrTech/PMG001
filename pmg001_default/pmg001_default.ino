@@ -6,33 +6,115 @@
 #define TMP102_ADDRESS 0x49
 #define ADS1015_ADDRESS 0x48
 
-bool pa7_pressed = 0, pa3_pressed = 0, io_wake = 0, out_active = 0;
-int pa7_pressedfor = 0, pa3_pressedfor = 0, pa7_pressedon = 0, pa3_pressedon = 0, pa7_presstime = 0, pa3_presstime = 0, rtc_ctdn = 0;
+volatile uint16_t pa7_timer_count = 0;
+volatile uint16_t pa3_timer_count = 0;
+volatile bool pa7_pressed = false;
+volatile bool pa3_pressed = false;
+volatile bool pa7_handled = false;
+volatile bool pa3_handled = false;
 
-void setup() 
-{
-    Serial.begin(115200);
-    RTC_init();    
-    PORTA.PIN3CTRL = PORT_PULLUPEN_bm | PORT_ISC_BOTHEDGES_gc;  // Enable pull-up and interrupt on both edges for PA3
-    PORTA.PIN7CTRL = PORT_PULLUPEN_bm | PORT_ISC_BOTHEDGES_gc;  // Enable pull-up and interrupt on both edges for PA7
-    pinConfigure(PIN_PA6,(PIN_DIR_OUTPUT | PIN_PULLUP_ON | PIN_OUT_HIGH));
-    pinConfigure(PIN_PA2,(PIN_DIR_OUTPUT | PIN_PULLUP_OFF | PIN_OUT_LOW));  
-    PORTA.INTFLAGS = PORT_INT3_bm | PORT_INT7_bm;  // Clear any existing interrupt flags for PA3 and PA7
-
-    set_sleep_mode(SLEEP_MODE_PWR_DOWN);  // Set sleep mode to Power Down mode
-    Wire.begin();
-    sei();  // Enable global interrupts
-}
-
-void RTC_init() 
-{
-    while (RTC.STATUS > 0)
+void setup() {
+  Serial.begin(115200);
+  while (RTC.STATUS > 0)
     {
         ;  // Wait for all registers to be synchronized
     }
-    RTC.CLKSEL = RTC_CLKSEL_INT32K_gc;  // 32.768kHz Internal Ultra-Low-Power Oscillator (OSCULP32K)
-    RTC.PITINTCTRL = RTC_PI_bm;  // PIT Interrupt: enabled
-    RTC.PITCTRLA = RTC_PERIOD_CYC32768_gc | RTC_PITEN_bm;  // Enable PIT counter: enabled
+  RTC.CLKSEL = RTC_CLKSEL_INT32K_gc;  // 32.768kHz Internal Ultra-Low-Power Oscillator (OSCULP32K)
+  RTC.PITINTCTRL = RTC_PI_bm;  // PIT Interrupt: enabled
+  RTC.PITCTRLA = RTC_PERIOD_CYC32768_gc | RTC_PITEN_bm;  // Enable PIT counter: enabled 
+
+  PORTA.DIRCLR = PIN7_bm | PIN3_bm;  
+  PORTA.PIN7CTRL = PORT_PULLUPEN_bm | PORT_ISC_BOTHEDGES_gc;
+  PORTA.PIN3CTRL = PORT_PULLUPEN_bm | PORT_ISC_BOTHEDGES_gc;
+
+  PORTA.DIRSET = PIN2_bm | PIN6_bm;
+  PORTA.OUTCLR = PIN2_bm;  // PA2 initially off
+  PORTA.OUTSET = PIN6_bm;  // PA6 initially off
+
+  cli();
+
+  takeOverTCA0();  // Ensure control of TCA0 timer
+
+  // Configure TCA0 for 100ms interval
+  TCA0.SINGLE.CTRLA = TCA_SINGLE_CLKSEL_DIV64_gc;  
+  TCA0.SINGLE.PER = 1562;  // 100ms with 10MHz clock and 64 prescaler
+  TCA0.SINGLE.CTRLA |= TCA_SINGLE_ENABLE_bm; // Enable the timer
+  TCA0.SINGLE.INTCTRL = TCA_SINGLE_OVF_bm;   // Enable overflow interrupt
+
+  sei();
+  Wire.begin();
+  set_sleep_mode(SLEEP_MODE_STANDBY);  // Set sleep mode to standby
+}
+
+void loop() {
+  // Enter standby mode when idle
+  if (!pa7_pressed && !pa3_pressed) {
+    sleep_mode();  // Enter standby mode
+  }
+}
+
+ISR(PORTA_PORT_vect) {
+
+  // Debounce delay
+  delay(10);
+
+  if (PORTA.INTFLAGS & PIN7_bm) {
+    pa7_pressed = !(PORTA.IN & PIN7_bm); // LOW when pressed
+
+    if (pa7_pressed) {
+      pa7_timer_count = 0; // Start counting when button is pressed
+      pa7_handled = false; // Reset action flag
+    }
+    PORTA.INTFLAGS = PIN7_bm;
+  }
+
+  if (PORTA.INTFLAGS & PIN3_bm) {
+    pa3_pressed = !(PORTA.IN & PIN3_bm); // LOW when pressed
+
+    if (pa3_pressed) {
+      pa3_timer_count = 0; // Start counting when button is pressed
+      pa3_handled = false; // Reset action flag
+    }
+    PORTA.INTFLAGS = PIN3_bm;
+  }
+  Serial.flush();
+}
+
+ISR(TCA0_OVF_vect) {
+  TCA0.SINGLE.INTFLAGS = TCA_SINGLE_OVF_bm;
+
+  // PA7 tracking
+  if (pa7_pressed && !pa7_handled) {
+    pa7_timer_count++;
+
+    if ((PORTA.OUT & PIN6_bm) && pa7_timer_count >= 20) { // PA6 is off, 200ms
+      PORTA.OUTCLR = PIN6_bm; // Turn PA6 on (LOW state)
+
+      pa7_handled = true; // Mark action as handled
+    } else if (!(PORTA.OUT & PIN6_bm) && pa7_timer_count >= 300) { // PA6 is on, 3s
+      PORTA.OUTSET = PIN6_bm; // Turn PA6 off (HIGH state)
+
+      pa7_handled = true; // Mark action as handled
+    }
+  }
+
+  // PA3 tracking
+  if (pa3_pressed && !pa3_handled) {
+    pa3_timer_count++;
+
+    if (pa3_timer_count >= 2) {  // 200ms
+      PORTA.OUTTGL = PIN2_bm; // Toggle PA2
+      pa3_handled = true; // Mark action as handled
+    }
+  }
+
+  // Reset timer counts when buttons are released
+  if (!pa7_pressed) {
+    pa7_timer_count = 0;
+  }
+  if (!pa3_pressed) {
+    pa3_timer_count = 0;
+  }
 }
 
 ISR(RTC_PIT_vect) 
@@ -77,8 +159,22 @@ ISR(RTC_PIT_vect)
     output += String(bcbuf, 4);
     output += "mA\r\n";
     output += "-----------------------------------\r\n";
+    output += "PWR_SW:  ";
+    output += String(!digitalRead(PIN_PA7));
+    output += "\r\n";
+    output += "PA3_SW:  ";
+    output += String(!digitalRead(PIN_PA3));
+    output += "\r\n";
+    output += "BAT_OUT:  ";
+    output += String(!digitalRead(PIN_PA6));
+    output += "\r\n";
+    output += "LED_BUILTIN:  ";
+    output += String(digitalRead(PIN_PA2));
+    output += "\r\n";
+    output += "-----------------------------------\r\n";
     Serial.print(output);
-    rtc_ctdn = millis();
+
+    Serial.flush();
 }
 
 void INA219_setCal() 
@@ -207,84 +303,4 @@ float ADS1015_readChannel(uint8_t channel)
     }
 
     return (voltReg >> 4) * (4.096f / (32768 >> 4));
-}
-
-void loop() 
-{
-    sleep_mode();  // Put the MCU to sleep
-    Serial.begin(115200);
-
-    if(io_wake) 
-    {
-        while(!digitalRead(PIN_PA7)) 
-        {
-            pa7_presstime = millis() - pa7_pressedon;
-            if((pa7_presstime >= 500) && (out_active == 0)) 
-            {
-                Serial.println("500ms Timer ON hit");
-                out_active = 1;
-                break;
-            }
-            if((pa7_presstime >= 3000) && (out_active == 1)) 
-            {
-                Serial.println("3s Timer OFF hit");
-                out_active = 0;
-                break;
-            }
-        }
-
-        while(!digitalRead(PIN_PA3)) 
-        {
-            pa3_presstime = millis() - pa3_pressedon;
-            if(pa3_presstime >= 100) 
-            {
-                digitalWrite(PIN_PA2, !digitalRead(PIN_PA2));
-                Serial.println("100ms LED_BUILTIN toggle hit");
-                break;
-            }
-        }
-    }
-
-    io_wake = 0;
-    digitalWrite(PIN_PA6, out_active ? 0 : 1);
-    Serial.flush();
-}
-
-ISR(PORTA_PORT_vect) 
-{
-    io_wake = 1;
-    Serial.begin(115200);
-
-    if (PORTA.INTFLAGS & PORT_INT3_bm) 
-    {
-        delay(10);
-        if(!digitalRead(PIN_PA3)) 
-        {
-            pa3_pressed = 1;
-            pa3_pressedon = millis();
-        } 
-        else 
-        {
-            pa3_pressed = 0;
-            pa3_presstime = 0;
-        }
-    }
-
-    if (PORTA.INTFLAGS & PORT_INT7_bm) 
-    {
-        delay(10);
-        if(!digitalRead(PIN_PA7)) 
-        {
-            pa7_pressed = 1;
-            pa7_pressedon = millis();
-        } 
-        else 
-        {
-            pa7_pressed = 0;
-            pa7_presstime = 0;
-        }
-    }
-
-    Serial.flush();
-    PORTA.INTFLAGS = PORT_INT3_bm | PORT_INT7_bm;
 }
