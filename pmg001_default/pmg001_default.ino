@@ -29,7 +29,7 @@ void setup() {
 
   PORTA.DIRSET = PIN2_bm | PIN6_bm;
   PORTA.OUTCLR = PIN2_bm;  // PA2 initially off
-  PORTA.OUTSET = PIN6_bm;  // PA6 initially off
+  PORTA.OUTCLR = PIN6_bm;  // PA6 initially off
 
   cli();
 
@@ -87,12 +87,12 @@ ISR(TCA0_OVF_vect) {
   if (pa7_pressed && !pa7_handled) {
     pa7_timer_count++;
 
-    if ((PORTA.OUT & PIN6_bm) && pa7_timer_count >= 20) { // PA6 is off, 200ms
-      PORTA.OUTCLR = PIN6_bm; // Turn PA6 on (LOW state)
+    if (!(PORTA.OUT & PIN6_bm) && pa7_timer_count >= 20) { // PA6 is off, 200ms
+      PORTA.OUTSET = PIN6_bm; // Turn PA6 on (LOW state)
 
       pa7_handled = true; // Mark action as handled
-    } else if (!(PORTA.OUT & PIN6_bm) && pa7_timer_count >= 300) { // PA6 is on, 3s
-      PORTA.OUTSET = PIN6_bm; // Turn PA6 off (HIGH state)
+    } else if ((PORTA.OUT & PIN6_bm) && pa7_timer_count >= 300) { // PA6 is on, 3s
+      PORTA.OUTCLR = PIN6_bm; // Turn PA6 off (HIGH state)
 
       pa7_handled = true; // Mark action as handled
     }
@@ -166,7 +166,7 @@ ISR(RTC_PIT_vect)
     output += String(!digitalRead(PIN_PA3));
     output += "\r\n";
     output += "BAT_OUT:  ";
-    output += String(!digitalRead(PIN_PA6));
+    output += String(digitalRead(PIN_PA6));
     output += "\r\n";
     output += "LED_BUILTIN:  ";
     output += String(digitalRead(PIN_PA2));
