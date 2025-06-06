@@ -1,0 +1,234 @@
+(footprint "SOT96P240X110-3N"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "SOT-23_2024")
+	(property "Reference" "REF**"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "5666c534-0a0d-4373-a1ce-cb86a23e6782")
+		(effects
+			(font
+				(size 1.1684 1.1684)
+				(thickness 0.1016)
+			)
+		)
+	)
+	(property "Value" "SOT96P240X110-3N"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "1e828fbf-4d40-490a-8c62-160a34d4a9e4")
+		(effects
+			(font
+				(size 1.1684 1.1684)
+				(thickness 0.1016)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "6c2bca73-d7b4-4d9f-b0ca-998a15d1d8b0")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "36c5c09e-e94a-44bc-a843-6360805e471c")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_line
+		(start -1.6 -1.535)
+		(end -0.5 -1.535)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "8068d463-4ab0-48ab-b558-e4cbb6d0a8c0")
+	)
+	(fp_line
+		(start -0.15 -1.45)
+		(end 0.15 -1.45)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "bde22939-1343-4612-b6c8-ad4185f61a49")
+	)
+	(fp_line
+		(start -0.15 1.45)
+		(end -0.15 -1.45)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "1c0f3b38-e69d-49be-896b-9178d1924977")
+	)
+	(fp_line
+		(start 0.15 -1.45)
+		(end 0.15 1.45)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "4f3ab43f-75bc-4b70-9661-69c346bdc1a1")
+	)
+	(fp_line
+		(start 0.15 1.45)
+		(end -0.15 1.45)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "f541282c-8484-49a0-9255-0e14a8d50a02")
+	)
+	(fp_line
+		(start -1.85 -1.75)
+		(end 1.85 -1.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "31a79dfc-f1e2-4d5b-86bf-601daea05e92")
+	)
+	(fp_line
+		(start -1.85 1.75)
+		(end -1.85 -1.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "4ab8c349-b603-4cd8-a57b-3132c2c4ceaf")
+	)
+	(fp_line
+		(start -0.65 -1.45)
+		(end 0.65 -1.45)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "fa862242-afc0-440b-82e5-d604781794fa")
+	)
+	(fp_line
+		(start -0.65 -0.49)
+		(end 0.31 -1.45)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "4b5e894f-c8e3-4e2b-8c25-cbda9f103782")
+	)
+	(fp_line
+		(start -0.65 1.45)
+		(end -0.65 -1.45)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "ca144233-99dc-400e-995b-ea9e7fa25d13")
+	)
+	(fp_line
+		(start 0.65 -1.45)
+		(end 0.65 1.45)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "79e6fc92-f0c5-4cf1-86de-4910b4e2f33b")
+	)
+	(fp_line
+		(start 0.65 1.45)
+		(end -0.65 1.45)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "1366398f-9ebe-43cf-bdb0-c643c250563a")
+	)
+	(fp_line
+		(start 1.85 -1.75)
+		(end 1.85 1.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "1be69555-0d19-44ed-ba67-b78c1dc2e833")
+	)
+	(fp_line
+		(start 1.85 1.75)
+		(end -1.85 1.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "215371d7-32bd-4699-b953-5c0568cb12d9")
+	)
+	(pad "1" smd rect
+		(at -1.05 -0.96)
+		(size 1.1 0.65)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_mask_margin 0.0508)
+		(solder_paste_margin 0)
+		(thermal_bridge_angle 0)
+		(uuid "d204c0e0-3b70-446c-8a30-5b5fe437ede6")
+	)
+	(pad "2" smd rect
+		(at -1.05 0.96)
+		(size 1.1 0.65)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_mask_margin 0.0508)
+		(solder_paste_margin 0)
+		(thermal_bridge_angle 0)
+		(uuid "c245b197-1dbd-4aa2-b4f6-7f53bb693008")
+	)
+	(pad "3" smd rect
+		(at 1.05 0)
+		(size 1.1 0.65)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_mask_margin 0.0508)
+		(solder_paste_margin 0)
+		(thermal_bridge_angle 0)
+		(uuid "4e62244f-b4b5-437a-bf8e-42224af2b4cc")
+	)
+	(embedded_fonts no)
+	(model "${KICAD9_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.wrl"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

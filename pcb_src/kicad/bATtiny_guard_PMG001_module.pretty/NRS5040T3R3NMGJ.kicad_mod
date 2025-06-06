@@ -1,0 +1,122 @@
+(footprint "NRS5040T3R3NMGJ"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(uuid "c9726f7c-fb0b-46bc-8975-65b7af3e9cf5")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Val**"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "bd8a33e0-8651-40e2-91bb-34628a3a13cd")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "1e8efa99-1ebb-4aaa-90b8-3cdc1b29e632")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "e0cad578-9a67-4e47-ab83-550a021114d9")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_line
+		(start -1.94 -2.46)
+		(end 1.9 -2.46)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "9d7fec08-4a93-421f-81f8-3f7fc2008af2")
+	)
+	(fp_line
+		(start -1.94 2.51)
+		(end -1.94 -2.46)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "9ca4073e-283c-4a5c-afce-0e592fdb235e")
+	)
+	(fp_line
+		(start 1.9 -2.46)
+		(end 1.9 2.51)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "b7fd7a91-d783-4891-9d18-a5b2ba2c2363")
+	)
+	(fp_line
+		(start 1.9 2.51)
+		(end -1.94 2.51)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "2ae92f73-d5db-4c96-b14c-2f0dec10a76a")
+	)
+	(pad "P$1" smd rect
+		(at -1.8 0 90)
+		(size 4 1.5)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_mask_margin 0.0508)
+		(solder_paste_margin 0)
+		(thermal_bridge_angle 0)
+		(uuid "c184f3e9-6a32-4ddc-ab20-c11302b40f0f")
+	)
+	(pad "P$2" smd rect
+		(at 1.8 0 90)
+		(size 4 1.5)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_mask_margin 0.0508)
+		(solder_paste_margin 0)
+		(thermal_bridge_angle 0)
+		(uuid "22cd955a-cfe8-4b59-859f-a53290f7a8e2")
+	)
+	(embedded_fonts no)
+	(model "${KICAD9_3DMODEL_DIR}/Inductor_SMD.3dshapes/L_Wuerth_MAPI-4020.wrl"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1.5 1 1)
+		)
+		(rotate
+			(xyz -0 -0 -0)
+		)
+	)
+)

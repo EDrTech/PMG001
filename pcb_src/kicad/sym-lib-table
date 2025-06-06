@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 0)
+  (lib (name "bATtiny_guard_PMG001_module-eagle-import")(type "KiCad")(uri "${KIPRJMOD}/bATtiny_guard_PMG001_module-eagle-import.kicad_sym")(options "")(descr ""))
+)
